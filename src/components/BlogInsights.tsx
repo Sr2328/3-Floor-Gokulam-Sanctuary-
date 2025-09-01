@@ -7,7 +7,7 @@ const BlogInsights = () => {
     {
       title: 'Why Sohna is the New Luxury Hotspot',
       excerpt: 'Discover how Sohna has emerged as the preferred destination for luxury real estate investments in the NCR region.',
-      image: 'https://images.pexels.com/photos/1396119/pexels-photo-1396119.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://i.postimg.cc/cLw7w3vK/jsd.webp?auto=compress&cs=tinysrgb&w=400',
       date: 'March 15, 2024',
       readTime: '5 min read',
       category: 'Market Insights'
@@ -23,7 +23,7 @@ const BlogInsights = () => {
     {
       title: 'Investment Potential in South Gurugram',
       excerpt: 'Analyze the growing investment opportunities and appreciation potential in the South Gurugram corridor.',
-      image: 'https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://i.postimg.cc/DzhNXnwT/Feature-image-Gurugram.webp?auto=compress&cs=tinysrgb&w=400',
       date: 'March 10, 2024',
       readTime: '6 min read',
       category: 'Investment'

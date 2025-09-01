@@ -60,7 +60,7 @@ const AboutDeveloper: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">Joginder Properties</h3>
-                  <p className="text-blue-600 text-sm font-medium">Premium Real Estate Developer</p>
+                  <p className="text-blue-600 text-sm font-medium">Premium Real Estate Agency</p>
                 </div>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -150,11 +150,11 @@ const AboutDeveloper: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-blue-600" />
-                  <span className="text-sm text-gray-600">+91 99999 99999</span>
+                  <span className="text-sm text-gray-600">+91 9818223938</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-blue-600" />
-                  <span className="text-sm text-gray-600">info@joginderproperties.com</span>
+                  <span className="text-sm text-gray-600">Joginderpropertiesncr@gmail.com</span>
                 </div>
               </div>
             </div>

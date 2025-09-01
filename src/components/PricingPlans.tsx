@@ -4,26 +4,15 @@ import { Check, CreditCard } from 'lucide-react';
 import ContactModal from './ContactModal';
 
 const PricingPlans = () => {
-  const [activeTab, setActiveTab] = useState('down-payment');
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // ✅ Down Payment Plan (Brochure-Style)
-  const downPaymentPlan = [
-    { stage: 'Booking Amount', percentage: '2%', amount: '₹2,90,000' },
-    { stage: 'Agreement Amount', percentage: '8%', amount: '₹11,60,000' },
-    { stage: 'On Commencement', percentage: '20%', amount: '₹29,00,000' },
-    { stage: 'On Completion', percentage: '70%', amount: '₹1,01,50,000' }
-  ];
-
-  // ✅ Construction Linked Plan (Brochure-Style)
-  const constructionPlan = [
-    { stage: 'Booking Amount', percentage: '2%', amount: '₹2,90,000' },
-    { stage: 'Foundation Work', percentage: '15%', amount: '₹21,75,000' },
-    { stage: 'Plinth Level Completion', percentage: '15%', amount: '₹21,75,000' },
-    { stage: 'First Floor Slab', percentage: '15%', amount: '₹21,75,000' },
-    { stage: 'Roof Slab Completion', percentage: '15%', amount: '₹21,75,000' },
-    { stage: 'Finishing & Interiors', percentage: '20%', amount: '₹29,00,000' },
-    { stage: 'Final Possession', percentage: '18%', amount: '₹26,10,000' }
+  // ✅ Flexi Payment Plan (Based on 1.45 Cr)
+  const flexiPlan = [
+    { stage: 'Booking Amount', percentage: '-', amount: '₹5,00,000' },
+    { stage: 'Within 45 days of booking', percentage: '30% (Less Booking)', amount: '₹38,50,000' },
+    { stage: 'On Super Structure', percentage: '30%', amount: '₹43,50,000' },
+    { stage: 'On Application of OC', percentage: '30%', amount: '₹43,50,000' },
+    { stage: 'On Offer of Possession', percentage: '10%', amount: '₹14,50,000' }
   ];
 
   return (
@@ -37,10 +26,10 @@ const PricingPlans = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Gokulam – Pricing & Payment Plans
+            Gokulam – Flexi Payment Plan
           </h2>
           <p className="text-xl text-gray-300">
-            Flexible and transparent payment options crafted for your convenience
+            Convenient and transparent payment schedule designed for your ease
           </p>
         </motion.div>
 
@@ -83,7 +72,7 @@ const PricingPlans = () => {
             </div>
           </motion.div>
 
-          {/* Payment Plans */}
+          {/* Flexi Payment Plan */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -91,33 +80,11 @@ const PricingPlans = () => {
             className="lg:col-span-2"
           >
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-              {/* Tabs */}
-              <div className="flex bg-white/10 rounded-xl p-1 mb-8">
-                <button
-                  onClick={() => setActiveTab('down-payment')}
-                  className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all duration-300 ${
-                    activeTab === 'down-payment'
-                      ? 'bg-white text-black'
-                      : 'text-white hover:bg-white/10'
-                  }`}
-                >
-                  Down Payment Plan
-                </button>
-                <button
-                  onClick={() => setActiveTab('construction')}
-                  className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all duration-300 ${
-                    activeTab === 'construction'
-                      ? 'bg-white text-black'
-                      : 'text-white hover:bg-white/10'
-                  }`}
-                >
-                  Construction Linked Plan
-                </button>
-              </div>
+              <h3 className="text-2xl font-bold mb-6 text-yellow-400">Flexi Payment Schedule</h3>
 
               {/* Payment Schedule */}
               <div className="space-y-4">
-                {(activeTab === 'down-payment' ? downPaymentPlan : constructionPlan).map((item, index) => (
+                {flexiPlan.map((item, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: 20 }}
@@ -127,7 +94,7 @@ const PricingPlans = () => {
                   >
                     <div>
                       <h4 className="font-semibold text-white">{item.stage}</h4>
-                      <p className="text-sm text-gray-300">{item.percentage} of total cost</p>
+                      <p className="text-sm text-gray-300">{item.percentage}</p>
                     </div>
                     <div className="text-xl font-bold text-yellow-400">{item.amount}</div>
                   </motion.div>

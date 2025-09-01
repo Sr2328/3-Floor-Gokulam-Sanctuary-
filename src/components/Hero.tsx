@@ -42,7 +42,7 @@ const Hero = () => {
             South of Gurugram • Premium Living • Modern Amenities
           </p>
           <p className="text-2xl md:text-3xl font-bold text-yellow-400">
-            Starting ₹1.5 Crores
+            Starting ₹1.45 Crores
           </p>
         </motion.div>
 

@@ -9,32 +9,36 @@ const FloorPlans = () => {
 
   // ✅ Only 2 Floor Plans
   const floorPlans = [
-    {
-      id: 'plan-a',
-      title: 'Plan A – 1450 sq. ft.',
-      features: [
-        '3 Spacious Bedrooms',
-        '2 Modern Bathrooms',
-        'Elegant Living & Dining Area',
-        'Contemporary Kitchen',
-        'Private Balcony with View'
-      ],
-      image:
-        'https://images.pexels.com/photos/8293641/pexels-photo-8293641.jpeg?auto=compress&cs=tinysrgb&w=600'
-    },
-    {
-      id: 'plan-b',
-      title: 'Plan B – 1550 sq. ft.',
-      features: [
-        '3 Premium Bedrooms',
-        '3 Luxurious Bathrooms',
-        'Expansive Living Room',
-        'Designer Kitchen',
-        'Dedicated Study / Work Space'
-      ],
-      image:
-        'https://images.pexels.com/photos/8293649/pexels-photo-8293649.jpeg?auto=compress&cs=tinysrgb&w=600'
-    }
+   {
+  id: 'plan-b-block',
+  title: 'Plan B-Block – 1650 sq. ft.',
+  features: [
+    '3 Spacious Bedrooms',
+    '3 Modern Bathrooms',
+    'Elegant Living & Dining Area',
+    'Contemporary Kitchen',
+    'Multiple Balconies & Open Spaces',
+    'Dedicated Lift Lobby'
+  ],
+  image:
+    'https://i.postimg.cc/52xSV0PD/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-018.png'
+  
+},
+{
+  id: 'plan-c-block',
+  title: 'Plan C-Block – 1650 sq. ft. Approx',
+  features: [
+    '3 Premium Bedrooms',
+    '3 Well-Designed Bathrooms',
+    'Expansive Living & Dining Space',
+    'Modern Kitchen',
+    'Balconies with Scenic Views',
+    'Lift & Lobby Access'
+  ],
+  image:
+    'https://i.postimg.cc/RCkgjvxz/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-020.png'
+}
+
   ];
 
   const handleDownload = (planId: string) => {

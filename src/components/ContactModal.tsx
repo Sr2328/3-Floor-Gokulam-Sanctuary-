@@ -1,11 +1,25 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Phone, MessageCircle } from 'lucide-react';
+import { X, Phone, MessageCircle, MessageSquare, Loader2 } from 'lucide-react';
 
 interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
   type: string;
+}
+
+interface DiscordWebhook {
+  content: string;
+  embeds: Array<{
+    title: string;
+    description?: string;
+    fields: Array<{
+      name: string;
+      value: string;
+      inline?: boolean;
+    }>;
+    color?: number;
+  }>;
 }
 
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, type }) => {
@@ -30,39 +44,44 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, type }) =>
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Discord webhook (replace with your webhook URL)
-    const webhookUrl = 'YOUR_DISCORD_WEBHOOK_URL';
-    
-    const payload = {
-      content: `New lead from Gokulam Sanctuary - ${type}`,
-      embeds: [{
-        title: `New ${getModalTitle()} Request`,
-        fields: [
-          { name: 'Name', value: formData.name, inline: true },
-          { name: 'Phone', value: formData.phone, inline: true },
-          { name: 'Email', value: formData.email, inline: true },
-          { name: 'Message', value: formData.message || 'N/A', inline: false }
-        ],
-        color: 0x0099ff
-      }]
-    };
-
     try {
-      // Simulate Discord webhook call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const DISCORD_WEBHOOK_URL = process.env. ;
+
+      if (DISCORD_WEBHOOK_URL) {
+        const discordMessage: DiscordWebhook = {
+          content: `🏢 New ${type} Request from Gokulam Sanctuary!`,
+          embeds: [{
+            title: `New ${getModalTitle()} Request`,
+            fields: [
+              { name: "👤 Name", value: formData.name, inline: true },
+              { name: "📞 Phone", value: formData.phone, inline: true },
+              { name: "📧 Email", value: formData.email, inline: true },
+              { name: "💬 Message", value: formData.message || "No message provided" },
+              { name: "📝 Request Type", value: type.charAt(0).toUpperCase() + type.slice(1) }
+            ],
+            color: 0x5865F2 // Discord Blue color
+          }]
+        };
+
+        const response = await fetch(DISCORD_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(discordMessage)
+        });
+
+        if (!response.ok) throw new Error('Discord webhook failed');
+      }
       
-      // Trigger download based on type
+      // Handle downloads based on type
       if (type === 'brochure') {
-        // Simulate brochure download
         const link = document.createElement('a');
-        link.href = '#'; // Replace with actual PDF URL
+        link.href = 'https://i.postimg.cc/gJnPBGFZ/Gokulam-The-Sanctuary-luxury-Floor-2.png';
         link.download = 'Gokulam-Sanctuary-Brochure.pdf';
         link.click();
       } else if (type === 'payment') {
-        // Simulate payment plan download
         const link = document.createElement('a');
-        link.href = '#'; // Replace with actual PDF URL
-        link.download = 'Gokulam-Sanctuary-Payment-Plan.pdf';
+        link.href = 'https://i.postimg.cc/gJnPBGFZ/Gokulam-The-Sanctuary-luxury-Floor-2.png';
+        link.download = 'Payment-Plan.pdf';
         link.click();
       }
 
@@ -70,6 +89,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, type }) =>
       onClose();
       setFormData({ name: '', phone: '', email: '', message: '' });
     } catch (error) {
+      console.error('Error:', error);
       alert('There was an error submitting your request. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -158,28 +178,44 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, type }) =>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-900 transition-all duration-300 disabled:opacity-50"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-900 transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2"
               >
-                {isSubmitting ? 'Submitting...' : 'Submit Request'}
+                {isSubmitting ? (
+                  <>
+                    <Loader2 size={20} className="animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  'Submit Request'
+                )}
               </button>
             </form>
 
             <div className="mt-6 flex gap-4">
               <a
-                href="tel:+919999999999"
+                href="tel:+9818223938"
                 className="flex-1 bg-green-600 text-white py-3 px-4 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-green-700 transition-colors"
               >
                 <Phone size={18} />
                 Call Now
               </a>
               <a
-                href="https://wa.me/919999999999"
+                href="https://wa.me/9818223938"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 bg-green-500 text-white py-3 px-4 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-green-600 transition-colors"
               >
                 <MessageCircle size={18} />
                 WhatsApp
+              </a>
+              <a
+                href="https://discord.gg/YOUR-INVITE-CODE"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 bg-indigo-500 text-white py-3 px-4 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-indigo-600 transition-colors"
+              >
+                <MessageSquare size={18} />
+                Discord
               </a>
             </div>
           </motion.div>
