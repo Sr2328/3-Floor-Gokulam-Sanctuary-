@@ -38,7 +38,8 @@ const ContactSection: React.FC = () => {
     setFormStatus('idle');
 
     try {
-      const DISCORD_WEBHOOK_URL = process.env.NEXT_PUBLIC_DISCORD_WEBHOOK_URL;
+      const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1408075707996962898/lt_L3ho0Q0Mscu3gF3xOLFDWv9PLHQfIml5A8KhrgecK6F9q9VL72raYzhW5bwELgOg9 "
+
 
       if (DISCORD_WEBHOOK_URL) {
         const discordMessage: DiscordWebhook = {

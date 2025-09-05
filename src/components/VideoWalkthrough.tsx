@@ -33,10 +33,10 @@ const VideoWalkthrough = () => {
             </span>
           </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent">
-            Immersive Walkthrough
+            Gokulam Sanctuary 
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Step into your future home through our state-of-the-art virtual tour experience
+            Step into your future home with our exclusive video of Gokulam Sanctuary
           </p>
         </motion.div>
 
@@ -53,7 +53,7 @@ const VideoWalkthrough = () => {
             {/* Video Thumbnail */}
             <div className="relative aspect-video bg-gradient-to-br from-blue-900 to-purple-900">
               <motion.img
-                src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src="../../dist/assets/Images/New-Brochure-Video-The-Sanctuary.mp4?auto=compress&cs=tinysrgb&w=1200"
                 alt="Video Thumbnail"
                 className="w-full h-full object-cover"
                 animate={{ scale: isHovered ? 1.05 : 1 }}
@@ -82,7 +82,7 @@ const VideoWalkthrough = () => {
               >
                 <h3 className="text-3xl font-bold mb-3">Experience Luxury Living</h3>
                 <p className="text-gray-200 text-lg max-w-2xl">
-                  Discover every detail of our premium 3BHK floors through this immersive virtual tour
+                  Discover every detail of our premium 3BHK floors through this immersive Videp
                 </p>
               </motion.div>
             </div>
@@ -139,7 +139,7 @@ const VideoWalkthrough = () => {
                 onClick={e => e.stopPropagation()}
               >
                 <iframe
-                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1"
+                  src="../../dist/assets/Images/New-Brochure-Video-The-Sanctuary.mp4?autoplay=1&mute=0"
                   title="Gokulam Sanctuary Walkthrough"
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

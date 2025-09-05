@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 opacity-90 z-10"></div>
         <img
-          src="https://i.postimg.cc/LsxjCwGR/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-001.png?auto=compress&cs=tinysrgb&w=1920"
+          src=" "
           alt="Luxury Living"
           className="w-full h-full object-cover"
         />

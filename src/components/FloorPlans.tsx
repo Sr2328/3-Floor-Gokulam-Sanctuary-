@@ -7,38 +7,36 @@ const FloorPlans = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('');
 
-  // ✅ Only 2 Floor Plans
+  // ✅ Floor Plans
   const floorPlans = [
-   {
-  id: 'plan-b-block',
-  title: 'Plan B-Block – 1650 sq. ft.',
-  features: [
-    '3 Spacious Bedrooms',
-    '3 Modern Bathrooms',
-    'Elegant Living & Dining Area',
-    'Contemporary Kitchen',
-    'Multiple Balconies & Open Spaces',
-    'Dedicated Lift Lobby'
-  ],
-  image:
-    'https://i.postimg.cc/52xSV0PD/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-018.png'
-  
-},
-{
-  id: 'plan-c-block',
-  title: 'Plan C-Block – 1650 sq. ft. Approx',
-  features: [
-    '3 Premium Bedrooms',
-    '3 Well-Designed Bathrooms',
-    'Expansive Living & Dining Space',
-    'Modern Kitchen',
-    'Balconies with Scenic Views',
-    'Lift & Lobby Access'
-  ],
-  image:
-    'https://i.postimg.cc/RCkgjvxz/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-020.png'
-}
-
+    {
+      id: 'plan-b-block',
+      title: 'Plan B-Block – 1650 sq. ft.',
+      features: [
+        '3 Spacious Bedrooms',
+        '3 Modern Bathrooms',
+        'Elegant Living & Dining Area',
+        'Contemporary Kitchen',
+        'Multiple Balconies & Open Spaces',
+        'Dedicated Lift Lobby',
+      ],
+      image: '../../dist/assets/Images/10.png', // ✅ place in /public/images/
+      pdf: '../../dist/assets/Images/10.png', // ✅ place in /public/pdfs/
+    },
+    {
+      id: 'plan-c-block',
+      title: 'Plan C-Block – 1650 sq. ft. Approx',
+      features: [
+        '3 Premium Bedrooms',
+        '3 Well-Designed Bathrooms',
+        'Expansive Living & Dining Space',
+        'Modern Kitchen',
+        'Balconies with Scenic Views',
+        'Lift & Lobby Access',
+      ],
+      image: '../../dist/assets/Images/12.png',
+      pdf: '../../dist/assets/Images/12.png',
+    },
   ];
 
   const handleDownload = (planId: string) => {
@@ -131,6 +129,7 @@ const FloorPlans = () => {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           type="floorplan"
+          selectedPlan={selectedPlan}
         />
       </div>
     </section>

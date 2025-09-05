@@ -8,33 +8,33 @@ const Gallery = () => {
 
   const images = [
     {
-      src: "https://i.postimg.cc/LsxjCwGR/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-001.png",
+      src: "../../dist/assets/Images/Gokulam The Sanctuary luxury Floor.pdf-image-013.jpg",
       title: "Modern Residences",
       description: "Elegant apartments with contemporary design.",
     },
     {
-      src: "https://i.postimg.cc/MTcfg7Bp/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-031.png",
-      title: "Modern Residences",
+      src: "../../dist/assets/Images/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-009.jpg",
+      title: "Luxury Floors Plan",
       description: "Spacious homes designed for comfort and elegance.",
     },
     {
-      src: "https://i.postimg.cc/CLpn6fxw/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-009.jpg",
+      src: "../../dist/assets/Images/Gokulam The Sanctuary luxury Floor (2).pdf-image-031.png",
       title: "Solar Street Lights",
       description: "Eco-friendly smart lighting",
     },
     {
-      src: "https://i.postimg.cc/VNtWCP7R/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-022.jpg",
+      src: "../../dist/assets/Images/Gokulam The Sanctuary luxury Floor (2).pdf-image-022.jpg",
       title: "Kids’ Play Zone",
       description: "Fun and safe outdoor play area for children.",
     },
    
     {
-      src: "https://i.postimg.cc/rpyqdqF6/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-006.jpg",
+      src: "../../dist/assets/Images/Gokulam The Sanctuary luxury Floor (2).pdf-image-006.jpg",
       title: "Spacious Living",
       description: "Elegant interiors with premium finish",
     },
     {
-      src: "https://i.postimg.cc/nV9p9RZL/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-024.jpg",
+      src: "../../dist/assets/Images/WhatsApp Image 2025-08-26 at 11.56.20_aa2bbcb5.jpg",
       title: "Green Escape",
       description: "Beautiful park lane for walks and relaxation",
     },
@@ -44,17 +44,17 @@ const Gallery = () => {
   description: "Well-equipped fitness zone under the open sky",
     },
     {
-      src: "https://i.postimg.cc/hjkF0ngt/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-028.jpg",
+      src: "../../dist/assets/Images/Gokulam The Sanctuary luxury Floor (2).pdf-image-028.jpg",
       title: "Yoga & Wellness",
   description: "Peaceful space for meditation and healthy living",
     },
     {
-      src: "https://i.postimg.cc/59LDMZb8/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-026.jpg",
+      src: "../../dist/assets/Images/Gokulam The Sanctuary luxury Floor (2).pdf-image-026.jpg",
       title: "Morning Walks",
   description: "Green pathways for fresh morning strolls",
     },
     {
-      src: "https://i.postimg.cc/sgDL7xSJ/Gokulam-The-Sanctuary-luxury-Floor-2-pdf-image-023.jpg",
+      src: "../../dist/assets/Images/Gokulam The Sanctuary luxury Floor (2).pdf-image-023.jpg",
    title: "Tennis & Badminton Court",
   description: "Dedicated courts for sports and recreation",
     },

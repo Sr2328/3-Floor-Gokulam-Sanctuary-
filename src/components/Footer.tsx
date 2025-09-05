@@ -1,11 +1,13 @@
 import React from 'react';
 import { Facebook, Instagram, Twitter, Linkedin, Building, Phone, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom'; // ✅ Router link for navigation
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -73,8 +75,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={16} className="text-yellow-400" />
-                <a href="mailto:info@gokulamsanctuary.com" className="text-gray-400 hover:text-white transition-colors">
-              joginderpropertiesncr@gmail.com
+                <a href="mailto:joginderpropertiesncr@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                  joginderpropertiesncr@gmail.com
                 </a>
               </div>
               <div className="flex items-start gap-3">
@@ -96,11 +98,12 @@ const Footer = () => {
               <p>&copy; 2024 Joginder Properties. All rights reserved.</p>
               <p className="mt-1">RERA Registration No: HR/RERA/GGM/XXX/XXXX/2024</p>
             </div>
+
+            {/* ✅ Privacy Policy Link */}
             <div className="flex flex-wrap gap-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">RERA</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Disclaimer</a>
+              <Link to="./privacy-policy" className="text-gray-400 hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
             </div>
           </div>
         </div>
